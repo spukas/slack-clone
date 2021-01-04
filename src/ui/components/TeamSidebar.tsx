@@ -57,7 +57,7 @@ const TeamSidebar: React.FunctionComponent<any> = ({ team }) => {
             </svg>
           </button>
         </div>
-        {team.channels.map((ch) => (
+        {team.channels.map((ch: { id: string; name: string }) => (
           <ChannelLink
             key={ch.id}
             to={`/team/${team.id}/channel/${ch.id}`}

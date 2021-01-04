@@ -23,9 +23,9 @@ function determineKind(status: number): HTTPErrorKind {
   else throw new Error(`Unknown HTTP status code ${status}`);
 }
 
-/** @param {HTTPErrorKind} kind */
+/** @param kind */
 export default class HTTPError extends Error {
-  kind;
+  kind: HTTPErrorKind;
   /**
    *
    * @param info
