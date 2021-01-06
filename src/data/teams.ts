@@ -1,4 +1,5 @@
 import type { ITeam } from '../types';
+import { assertIsTypedArray } from '../utils/assertIsTypedArray';
 import { apiCall } from '../utils/networking';
 
 /**
@@ -16,17 +17,6 @@ function isITeam(arg: any): arg is ITeam {
     typeof arg.id === 'string' &&
     Array.isArray(arg.channels)
   );
-}
-
-function assertIsTypedArray<T>(
-  arg: any,
-  check: (val: any) => val is T,
-): asserts arg is T[] {
-  if (!Array.isArray(arg))
-    throw new Error(`Not an array: ${JSON.stringify(arg)}`);
-
-  if (!arg.every(check))
-    throw new Error(`Failed type check: ${JSON.stringify(arg)}`);
 }
 
 let cachedAllTeamsList: Promise<ITeam[]>;

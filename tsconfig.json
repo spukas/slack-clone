@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "stripInternal": true,
-    "traceResolution": true,
+    // "traceResolution": true,
     "baseUrl": ".",
     "paths": {
       "types": ["types/*"]
